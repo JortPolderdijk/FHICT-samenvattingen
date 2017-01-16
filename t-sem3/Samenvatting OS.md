@@ -52,7 +52,7 @@ Processen voeren een functie uit.
 Een voorbeeld van een CPU met een single process is de ATMega328P die in een Arduino zit. Deze kan maar één process tegerlijkertijd runnen.
 
 #### Multi-process
-Minder low-level devices hebben vaak een multi-process CPU. Deze kan om gaan met meerdere processen tegelijkertijd. Processen worden opgestart door het operating system en communiceren met elkaar via ICP (**Inter-Process Communication**).
+Minder low-level devices hebben vaak een multi-process CPU. Deze kan om gaan met meerdere processen tegelijkertijd. Processen worden opgestart door het operating system en communiceren met elkaar via IPC (**Inter-Process Communication**).
 
 **Voordelen:**
 
@@ -67,7 +67,7 @@ Minder low-level devices hebben vaak een multi-process CPU. Deze kan om gaan met
 - Inter-Process Communication complexity
 
 #### Process scheduling
-De *scheduler* is eigenlijk de core van het operating systeem. Het verdeelt alle beschikbare processor time. Tevens kan het reageren op diverse iterrupts, zoals: system timer interrupt, I/O interrupt en system calls.
+De *scheduler* is eigenlijk de core van het operating systeem. Het verdeelt alle beschikbare processor time. Tevens kan het reageren op diverse interrupts, zoals: system timer interrupt, I/O interrupt en system calls.
 
 **States**
 
@@ -88,7 +88,8 @@ Er zijn meerdere algoritmes om te bepalen welk proces aan de beurt is. Er zijn e
 
 | To stop the running process                           | To select a new process               |
 |-------------------------------------------------------|---------------------------------------|
-| 1. wacht tot proces voltooid is                       | 1. first come first serve (fifo)      |
+| 1. wacht tot proces voltooid is                       | 1. first come first serve (
+)      |
 | 2. proces geeft zelf aan dat het mag                  | 2. highest priority                   |
 | 3. proces met hogere prioriteit of eind van tijdsslot | 3. worst turnaround time              |
 | 4. proces is blocked door resource request            | 4. shortest (expected) remaining time |
@@ -97,7 +98,7 @@ Er zijn meerdere algoritmes om te bepalen welk proces aan de beurt is. Er zijn e
 
 **First come first served (FIFO)**
 
-Dit is het simpelste algoritme om te bepalen wie er aan de beurt is. Een context switch vind plaats door het eindigen van een process, het blocken door een resource request of door een process met en hogere prioriteit.
+Dit is het simpelste algoritme om te bepalen wie er aan de beurt is. Een context switch vind plaats door het eindigen van een process, het blocken door een resource request of door een process met een hogere prioriteit.
 
 **Round Robin (RR)**
 
@@ -438,7 +439,7 @@ while (true)
 ```
 
 ### Message Queues
-Een makkelijker probleem om dit voor elkaar te krijgen is door gebruik te maken van een message queue.
+Een makkelijker oplossing voor dit probleem is door gebruik te maken van een message queue.
 
 **Voordelen**
 
