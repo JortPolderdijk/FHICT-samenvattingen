@@ -134,7 +134,7 @@ Door de commando's `make source` en `make` kan een image gebouwd worden.
 * `make linux-menuconfig`: Linux Kernel customization
 
 #### BusyBox
-BusyBox is het Zwitsers zakmes van Embedded Linux en bestaat uit één executable die vele Linux utilities (zoals init, wget, httpd, chmod) bevat. Het kleine bestand (< 500Kb) zorgt er voor dat hij goed bruikbaar is op embedded systemen.
+BusyBox is het Zwitsers zakmes van Embedded Linux en bestaat uit één executable die vele Linux utilities (zoals init, wget, httpd, chmod) bevat. Het kleine bestand (< 500Kb) zorgt er voor dat hij goed bruikbaar is op embedded systemen. De BusyBox binary gebruikt `argv` om uit te lezen welke applet hij moet uivoeren.
 
 **Hoe te gebruiken?**
 
@@ -198,6 +198,7 @@ Een Linux distributie bestaat uit de volgende drie dingen:
 | /etc/ |  configuration files & scripts |
 | /bin/ |  set of binaries |
 | /lib/ |  set of libraries |
+| /sbin/ | set of system binaries (like init and shutdown) |
 
 ### Storage organisation
 ![Storage](https://github.com/JortPolderdijk/FHICT-samenvattingen/raw/master/t-sem3/assets/OS/Picture4.png)
@@ -463,5 +464,5 @@ Een makkelijkere oplossing voor dit probleem is door gebruik te maken van een me
 ## Deamon
 Een deamon is een programma wat losgekoppeld is van de terminal. Dit kan op twee manieren:
 
-- Hij kan zichzelf loskoppelen door te *forken*.
+- Hij kan zichzelf loskoppelen door te *forken*. 
 - Hij kan zichzelf loskoppelen door `deamon(0, 0);`
