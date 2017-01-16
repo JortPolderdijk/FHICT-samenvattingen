@@ -149,7 +149,8 @@ Het is ook belangrijk om een goed netwerk in te kunnen stellen. Zonder netwerk k
 Er zijn twee manieren om je Linux te koppelen aan het internet. Via een statisch ip of via een dynamisch ip.
 
 Statisch IP-adres:
-```auto eth0iface eth0 inet static
+```auto eth0
+iface eth0 inet static
 adresss 10.0.0.42
 netmask 255.255.255.0
 gateway 10.0.0.1
@@ -178,7 +179,8 @@ POST: `qslength = getenv("CONTENT_LENGTH");`
 ![CGI](https://github.com/JortPolderdijk/FHICT-samenvattingen/raw/master/t-sem3/assets/OS/Picture2.png)
 
 ## Linux Distribution
-![CGI](https://github.com/JortPolderdijk/FHICT-samenvattingen/raw/master/t-sem3/assets/OS/Picture3.png)
+
+![CGI](https://github.com/JortPolderdijk/FHICT-samenvattingen/raw/master/t-sem3/assets/OS/Picture3.png)
 
 Een Linux distributie bestaat uit de volgende drie dingen:
 
@@ -256,7 +258,17 @@ target: prerequisites
 **Voorbeeld van een Makefile**
 
 ```makefile
-# Phony targets (i.e. not really files).PHONY: all cleanall: helloworldhelloworld: helloworld.c	gcc -o helloworld helloworld.c	@echo Helloworld is madeclean:	rm -f helloworld helloworld.o```
+# Phony targets (i.e. not really files)
+.PHONY: all clean
+
+all: helloworld
+
+helloworld: helloworld.c
+	gcc -o helloworld helloworld.c
+	@echo Helloworld is made
+clean:
+	rm -f helloworld helloworld.o
+```
 
 `.PHONY` is gebruikt om er voor te zorgen dat deze target altijd uitvoerd kan worden en er niet wordt gekeken of de files wel aangepast zijn.
 
@@ -302,7 +314,27 @@ Om POSIX threads te kunnen gebruiken moet je compilen met de flags `-lrt -phtrea
 **Voorbeeld**
 
 ```c++
-#include <pthread.h>#include <stdio.h>void *PrintHello(void *m){   printf("%s\n", m);   pthread_exit(NULL);}int main (int argc, char *argv[]){   pthread_t thread0, thread1;   pthread_create(&thread0, NULL, PrintHello, (void *)"hello");   pthread_create(&thread1, NULL, PrintHello, (void *)"world");   pthread_join(thread0, NULL);   pthread_join(thread1, NULL);   pthread_exit(NULL);}```
+#include <pthread.h>
+#include <stdio.h>
+
+void *PrintHello(void *m)
+{
+   printf("%s\n", m);
+   pthread_exit(NULL);
+}
+
+int main (int argc, char *argv[])
+{
+   pthread_t thread0, thread1;
+   pthread_create(&thread0, NULL, PrintHello, (void *)"hello");
+   pthread_create(&thread1, NULL, PrintHello, (void *)"world");
+
+   pthread_join(thread0, NULL);
+   pthread_join(thread1, NULL);
+
+   pthread_exit(NULL);
+}
+```
 
 ### Sockets
 Er zijn verschillende socket types, namelijk:
@@ -327,14 +359,31 @@ Met behulp van shared memory kunnen meerdere processen bij een stuk geheugen.
 **Voorbeeld**
 
 ```c++
-int main(){    int shm_fd = 0;    void *vaddr = NULL;    shm_fd = shm_open("my_shm", O_CREAT | O_RDWR, 0666);    ftruncate(shm_fd , SIZE) ;    vaddr = mmap(0, SIZE, PROT_WRITE, MAP_SHARED, shm_fd, 0);    mlock(vaddr, SIZE) ;    /*** Shared memory is ready for use ***/    munmap(vaddr, SIZE);    close(shm_fd);    shm_unlink("my_shm");    return 0;}
+int main(){
+    int shm_fd = 0;
+    void *vaddr = NULL;
+
+    shm_fd = shm_open("my_shm", O_CREAT | O_RDWR, 0666);
+    ftruncate(shm_fd , SIZE) ;
+    vaddr = mmap(0, SIZE, PROT_WRITE, MAP_SHARED, shm_fd, 0);
+    mlock(vaddr, SIZE) ;
+
+    /*** Shared memory is ready for use ***/
+
+    munmap(vaddr, SIZE);
+    close(shm_fd);
+    shm_unlink("my_shm");
+
+    return 0;
+}
 ```
 
 **Critical section**
 Een critical section is een stuk code wat door maar één thread tegelijk bewerkt mag worden omdat er een gedeelde resource wordt gebruikt.
 
 #### Mutual Exclusion
-ME zorgt ervoor dat als een process in een critical section bevindt, dat hij de enige is die daar in zit. We hebben een mutual execution algoritme nodig om de volgende problemen tegen te gaan:
+ME zorgt ervoor dat als een process in een critical section bevindt, dat hij de enige is die daar in zit. Dit voorkomt bijvoorbeeld dat twee processen tegelijkertijd in het zelfde stukje geheugen lezen en/of schrijven.
+Bij het ontwerpen van een mutual execution algoritme moet met de volgende problemen rekening worden gehouden:
 
 * deadlock
 * livelock
@@ -344,7 +393,14 @@ ME zorgt ervoor dat als een process in een critical section bevindt, dat hij de 
 Een voordeel van een semaphore is dat je geen busy-waiting hebt. Een nadeel is wel dat het OS semaphores wel moet ondersteunen.
 
 ```c++
-#include <semaphore.h>sem_initsem_opensem_post / sem_waitsem_closesem_unlink```
+#include <semaphore.h>
+
+sem_init
+sem_open
+sem_post / sem_wait
+sem_close
+sem_unlink
+```
 
 ## Producer / Consumer & Message Queues
 Producer en Consumer probleem gaat over het hebben van een buffer met behulp van semaphores.
@@ -358,14 +414,28 @@ Als je een buffer hebt om iets door te geven aan een ander process, wil je wel p
 *Producer*
 
 ```c++
-while (true){   sem_wait(e);   sem_wait(s);   append();   sem_post(s);   sem_post(n);}```
+while (true)
+{
+   sem_wait(e);
+   sem_wait(s);
+   append();
+   sem_post(s);
+   sem_post(n);
+}
+```
 
 *Consumer*
 
 ```c++
-while (true){   sem_wait(n);   sem_wait(s);   take();
+while (true)
+{
+   sem_wait(n);
+   sem_wait(s);
+   take();
    sem_post(s);
-   sem_post(e);}```
+   sem_post(e);
+}
+```
 
 ### Message Queues
 Een makkelijker probleem om dit voor elkaar te krijgen is door gebruik te maken van een message queue.
