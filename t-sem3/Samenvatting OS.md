@@ -236,7 +236,7 @@ Er zijn verschillende typen endpoints.
 | Control endpoint      | Besturingsverzoek aan het apparaat |             | Max 3x    |               | SET_INTERFACE                 |
 | Interrupt endpoint    | Kleine hoeveelheid data            | 1ms - 32 ms | Ja        |               | - Muis                        |
 | Bulk endpoint         | Middelmatige hoeveelheid data      |             | Ja        | Ja            | - Scanner data                |
-| Isochronous endpoints | Grootte hoeveelheid data           |             | Nee       | Nee           | - Audio stream & Video stream |
+| Isochronous endpoints | Grote hoeveelheid data           |             | Nee       | Nee           | - Audio stream & Video stream |
 
 #### Device descriptor
 Om met een device te kunnen communiceren moet je een aantal gegevens hebben. Je kan deze ophalen met behulp van commando `lsusb -v`. Vervolgens heb je de interface descriptors nodig (idVendor en idProduct) en het adres van de endpoints welke je aan wilt spreken.
@@ -439,7 +439,7 @@ while (true)
 ```
 
 ### Message Queues
-Een makkelijker oplossing voor dit probleem is door gebruik te maken van een message queue.
+Een makkelijkere oplossing voor dit probleem is door gebruik te maken van een message queue.
 
 **Voordelen**
 
@@ -458,7 +458,7 @@ Een makkelijker oplossing voor dit probleem is door gebruik te maken van een mes
 | mq_close()               | Close the queue                                 |
 | mq_unlink()              | Destroy the queue when all have unlinked        |
 
-*De naam van een Message Queue moet altijd met een / begin. Bijvoorbeeld: `/mijn_mq`.*
+*De naam van een Message Queue moet altijd met een / beginnen. Bijvoorbeeld: `/mijn_mq`.*
 
 ## Deamon
 Een deamon is een programma wat losgekoppeld is van de terminal. Dit kan op twee manieren:
