@@ -2,6 +2,8 @@
 
 -- Hier komt een table of contents --
 
+DISCLAIMER: kan fouten bevatten.
+
 ##Vakinhoud
 Informatie over de inhoud van het vak zijn afkomstig uit het blokboek vanaf de portal. Het gaat in dit geval over de versie van 2016-06-29.
 ### Thema
@@ -466,3 +468,101 @@ Een deamon is een programma wat losgekoppeld is van de terminal. Dit kan op twee
 
 - Hij kan zichzelf loskoppelen door te *forken*. 
 - Hij kan zichzelf loskoppelen door `deamon(0, 0);`
+
+
+# Vragen & antwoorden
+
+| Vraag | Antwoord |
+|------| ------|
+| Wat is een proces? | Een proces voert een functie binnen een programma uit. |
+|Wat zijn de voor- en nadelen van het opdelen van je applicatie in meerdere processen?|
+|Wat is en wat doet een operating system?
+|Welke voorbeelden van schaarse resources ken je?
+|Wat doet een scheduler in een operating system?
+|Wat is POSIX?
+|Welke scheduling algorithmes kent POSIX en wat is het verschil tussen die algorithmes?
+|Wat maakt een operating system geschikt voor real-time toepassingen?
+|
+|Van welke architectuur is Linux afgeleid? | Unix
+|Welke betekenis heeft de extensie van een file in Linux? | Geen betekenis.
+|Met welk Linux commando kan ik opvragen in welke directory ik sta? | `pwd` (print working directory)
+|Als ik nu in de directory `/home/eric/src` sta, in welke directory sta ik dan na uitvoeren van het commando `cd ../../../usr/local/lib` ? | `/usr/local/lib`
+|Wat houdt het begrip mounting in?
+|Wie mag de file 'fooscript' aanpassen (schrijven) na het uitvoeren van het commando 'chmod 664 fooscript' en wie mag deze file executeren?
+|Hoe kan ik het commando 'rm fooscript' uitvoeren als superuser?
+|Hoe kan ik in een (1) commandoregel het commando 'ls' uitvoeren, de output doorgeven aan het commando 'sort' en vervolgens de output wegschrijven naar een file met de naam 'lijst'? | `ls | sort > lijst` Het probleem is alleen dat het bestand `lijst` ook zelf weggeschreven wordt.| 
+|Wat doet het volgende commando: 'echo "foo bar" >> myfile' ? | Voegt `foo bar` toe aan het einde van het bestand `myfile`. |
+|
+|Wat wordt bedoeld met de kreet "Embedded Linux"? Anders gezegd: In hoeverre is het anders dan de Linux op je laptop?
+|Wat wordt er allemaal door BuildRoot geproduceerd?
+|Met welk commando kun je de BuildRoot configuratie aanpassen? Hoe de BusyBox configuratie? Hoe de Linux kernel configuratie?
+|Waarom wordt BusyBox gebruikt in plaats van losse Linux binaries?
+|Hoe weet BusyBox welke binary ("applet") hij moet nabootsen?
+|Wat moet je doen om een nieuwe applet aan BusyBox toe te voegen?
+|Wat wordt bedoeld met het begrip "Host" en het begrip "Target"?
+|In welke file staat de Linux netwerk configuratie? | in `/etc/network/interfaces`
+|Wat kun je doen met het commando "ssh" en wat met het commando "scp"?
+|Wat doet een HTTP Daemon (httpd)?
+|Hoe worden CGI-programma's opgestart?
+|Wat is de Query String in de volgende URL? `http://10.0.0.42/cgi-bin/mycgiprog?name=John+Doe&age=21` | `name=John+Doe&age=21`
+|Hoe wordt een Query String doorgegeven aan het CGI programma? | Via een enviroment variabel, namelijk `QUERY_STRING`. POST-request gaat via `stdin`.
+|Waar stuurt een CGI-programma zijn output naar toe? | naar `stdout`
+|
+|Uit welke 3 elementen bestaat een Linux distributie?
+|Op welke punten is een EmbeddedLinux distributie verschillend van een gewone Linux distributie?
+|Hoe is een SD-kaart ingedeeld?
+|Waar staat de afkorting MBR voor? Waar staat hij op de SD kaart en elke informatie staat er in?
+|Beschrijf wat er achtereenvolgens gebeurt als Linux boot.
+|Hoe kun je een programma tijdens booten automatisch laten opstarten?
+|Met welk Linux commando kan ik na het booten de kernel log messages bekijken?
+|Wat zijn de belangrijkste directories in het root filesystem en wat staat er in welke directory?
+|Met welk Linux commando kun je een image vanaf je disk, via een USB kaartlezer/schrijver, op een (micro)SD kaartje schrijven? (Het omgekeerde kan overigens ook.)
+|
+|Wat gebeurt er tijdens "enumeratie"? Wie neemt het initatief?
+|Als ik de knoppen van een device wil uitlezen, moet ik dan een IN of een OUT endpoint gebruiken?
+|Benoem tenminste 3 endpoint types.
+|Met welk Linux commando kun je de Device Descriptor van een USB device opvragen? | `lsusb -v` |
+|Hoe wordt een USB device geidentificeerd?
+|Wat moet je allemaal doen om de "libusb" library te gebruiken vanuit je eigen applicatie?
+|Hoe werkt GPIO bij Embedded Linux?
+|
+|Wat wordt bedoeld met "crosscompilatie"?
+|Wat is het nut van make en Makefiles?
+|Hoe ziet een Makefile regel (rule) er in algemene vorm uit?| `target: prerequisites /n /t recipe` |
+|Waarvoor wordt het target .PHONY gebruikt?
+|Wat doet de volgende regel in een Makefile?  `OBJECTS = $(SOURCES:.c=.o)`
+|Construeer een Makefile rule voor een target "install" die via scp het programma "myprog" installeert in directory /bin op een target met ip-adres 192.168.1.10. Wat gebeurt er als je "make install" uitvoert en het target "myprog" is nog niet gebouwd?
+|Als je het commando "make" twee maal uitvoert zal hij in het algemeen de tweede keer minder doen dan de eerste keer. Hoe werkt dat?
+|Welke target wordt gebouwd als je het commando "make" geeft zonder een expliciet target. 
+|
+|Bij forking is een child een kloon van de parent. Hoe weten parent en child dan wie wie is?
+|Hoeveel threads heeft een proces als het net gestart is?
+|Welke functie wordt door de eerste thread van een proces uitgevoerd?
+|Hoe kan een thread wachten tot een thread die hij gecreeerd heeft klaar is?
+|Met welke POSIX library moet je een applicatie linken als je threads gebruikt? Hoe doe je dat?
+|Via welke API moet je de TCP/IP stack gebruiken?
+|Waar is de TCP/IP stack geimplementeerd in Linux?
+|
+|Wat is shared memory en waar kan ik het vinden in Linux?
+|Als een proces een share memory unlinked, wat betekent dit dan? Wat merken andere processen die dit zelfde shared memory gebruiken hier van?
+|Wat is een Critical Section en wat is mutual exclusion?
+|Wat is een voor- en wat het een nadeel van semaforen?
+|Welke initiele waarde moet ik een semafoor geven wanneer die gebruikt wordt voor het implementeren van mutual exclusion?
+|Wat gebeurt er met een proces als het geblokkeerd wordt in een sem_wait operatie?
+|
+|Hoeveel semaforen heb je nodig als je 1 producer en 1 consumer hebt? Hoeveel als je meerdere producers en/of consumers hebt?
+|Als je semaforen gebruikt om producer/consumer te implementeren, welke initiele waardes moet je de gebruikte semaforen dan geven en waarom?
+|Wat zijn voordelen van het gebruik van MessageQueues versus een zelfgemaakt producer/consumer implementatie?
+|Waar bevinden MessageQueues zich in Linux? | MQs bevinden zich in de map `/dev/shm`|
+|
+|Wat is in Linux het wezenlijke verschil tussen het opstarten van een nieuwe thread en het forken van een nieuw proces?
+|Wat is een daemon?
+|Hoe kun je een verzameling data in Shared Memory of parameters in een Message bundelen in een datastructuur? Waarom is dat handig?
+|Op welke 2 verschillende manieren kun je messages over een TCP/IP verbinding versturen? Wat zijn de voor- en nadelen?
+|Hoe maak je in een embedded linux omgeving applicaties portable? Waarom is dat belangrijk?
+|Wat draag POSIX bij aan portability?
+|Hoe zorg je bij het compileren dat een programma met een of meer POSIX libraries wordt gelinkt?
+|Wat is het nut van Portable Datatypes?
+|Welke essentiele rollen vervult de C-library in een Linux systeem?
+|Waarom zijn er speciale Embedded C-libraries?
+|Wat is QEMU en wat kun je er mee?
