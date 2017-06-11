@@ -475,8 +475,8 @@ Een deamon is een programma wat losgekoppeld is van de terminal. Dit kan op twee
 | Vraag | Antwoord |
 |------| ------|
 | Wat is een proces? | Een proces voert een functie binnen een programma uit. |
-|Wat zijn de voor- en nadelen van het opdelen van je applicatie in meerdere processen?|
-|Wat is en wat doet een operating system?
+|Wat zijn de voor- en nadelen van het opdelen van je applicatie in meerdere processen?| Voordelen zijn dat er meerdere cores gebruikt kunnen worden, dat je een probleem op een natuurlijke manier opdeelt, meerdere programmeertalen eenvoudig samen gebruiken en mogelijkheid hergebruik van applicaties.|
+|Wat is en wat doet een operating system? | Een operating systeem is een programma wat   |
 |Welke voorbeelden van schaarse resources ken je?
 |Wat doet een scheduler in een operating system?
 |Wat is POSIX?
