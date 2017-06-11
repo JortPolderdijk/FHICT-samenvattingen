@@ -40,7 +40,7 @@ De ATmega328P beschikt over de volgende GPIO features:
 
 In een Atmega zit een pull-up resistor tussen de 20kΩ en de 50kΩ. Deze kan softwarematig worden ingeschakeld.
 
-![schematics](/Users/school/Documents/FHICT-samenvattingen/t-sem3/assets/ES/Picture1.png)
+![schematics](https://github.com/JortPolderdijk/FHICT-samenvattingen/tree/master/t-sem3/assets/ES/Picture1.png)
 
 DDRx = Data Direction Register
 PORTx = Output
@@ -253,7 +253,7 @@ Als we kijken naar de architectures die een CPU kan hebben, dan kan je ondersche
 
 ## Memory
 
-![schematics](/Users/school/Documents/FHICT-samenvattingen/t-sem3/assets/ES/Picture2.png)
+![schematics](https://github.com/JortPolderdijk/FHICT-samenvattingen/tree/master/t-sem3/assets/ES/Picture2.png)
 
 | Section |                                                          |
 |---------|----------------------------------------------------------|
