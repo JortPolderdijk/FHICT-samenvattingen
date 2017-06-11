@@ -4,18 +4,18 @@ DISCLAIMER: kan fouten bevatten. Graag bij het vinden van een fout deze repo clo
 
 ---
 
-##Vakinhoud
+## Vakinhoud
 
 Informatie over de inhoud van het vak zijn afkomstig uit het blokboek vanaf de portal. Het gaat in dit geval over de versie van 2017-01-19.
 
-###Thema
+### Thema
 Deze cursus richt zich op specifieke concepten voor het maken van gedistribueerde client/server systemen. Concepten die hierbij aan de orde komen zijn o.a. client, server, addressing, binding, contracting, hosting, session, instance management, data contracts, callbacks en events.
 
-###Leerdoelen
+### Leerdoelen
 
 * Services in the history of programming* WCF Architecture: Endpoints, Addresses, Bindings and Contracts* Service Configuration (Programmatic and Administrative)* Metadata Exchange* Hosting* Server Side and Client Side Programming* Service Contracts and Data Contracts* Instance Management* Operation Patterns* Security
 
-##Introductie
+## Introductie
 
 Diverse namen voor een applicatie die werkt op meerdere apparaten tegelijk, namelijk: *Distributed Applications*, *Client-Server Applications*, *Service Oriented Applications*.
 
@@ -191,7 +191,7 @@ Je hebt drie soorten instances, namelijk: `PerCall`, `PerSession` en `Singleton`
 - Con: Synchronizatie nodig tussen de clients
 - Vaak gebruikt bij unieke objecten zoals een aan te sturen motor.
 
-###Operations
+### Operations
 
 Er zijn verschillende types van operations binnen WCF, namelijk: `Request - Reply` (standaard), `One-way`, `Callbacks` en `Events`.
 
@@ -327,7 +327,7 @@ interface IBankEvents
 }
 ```
 
-##Oefentoets #1
+## Oefentoets #1
 
 1. Een voetbal toernooi heeft een WCF service zodat client applicaties aan het eind van de dag de nieuwe wedstrijduitslagen kunnen ontvangen. De uitslagen wordt weergegeven door een lijst van de klasse “Result”. De klasse “Result” heeft properties met de naam van de thuisclub, de naam van de uitclub, de score van de thuisclub en de score van de uitclub. De service maakt gebruik van het event “void NewResults(List<Result> results)” om een client op de hoogte te stellen van een nieuwe uitslagen. Definieer een contract voor deze service. **(3 punten)**
 2. Het endpoint voor deze service wordt geconfigureerd in de .config file. Geef aan hoe dit endpoint er uitziet. Hint: `<endpoint ......... />` **(1 punt)**
