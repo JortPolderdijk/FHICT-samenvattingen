@@ -5,14 +5,18 @@ DISCLAIMER: kan fouten bevatten. Graag bij het vinden van een fout deze repo clo
 ---
 
 ##Vakinhoud
+
 Informatie over de inhoud van het vak zijn afkomstig uit het blokboek vanaf de portal. Het gaat in dit geval over de versie van 2017-01-19.
 
-###ThemaDeze cursus richt zich op specifieke concepten voor het maken van gedistribueerde client/server systemen. Concepten die hierbij aan de orde komen zijn o.a. client, server, addressing, binding, contracting, hosting, session, instance management, data contracts, callbacks en events.
+###Thema
+Deze cursus richt zich op specifieke concepten voor het maken van gedistribueerde client/server systemen. Concepten die hierbij aan de orde komen zijn o.a. client, server, addressing, binding, contracting, hosting, session, instance management, data contracts, callbacks en events.
 
 ###Leerdoelen
+
 * Services in the history of programming* WCF Architecture: Endpoints, Addresses, Bindings and Contracts* Service Configuration (Programmatic and Administrative)* Metadata Exchange* Hosting* Server Side and Client Side Programming* Service Contracts and Data Contracts* Instance Management* Operation Patterns* Security
 
 ##Introductie
+
 Diverse namen voor een applicatie die werkt op meerdere apparaten tegelijk, namelijk: *Distributed Applications*, *Client-Server Applications*, *Service Oriented Applications*.
 
 Waarom distributeren:
@@ -40,6 +44,7 @@ Voordelen:
 - Gedeelde resources server
 
 **Challenge: Boundaries**
+
 Verschillende manieren om te willen communiceren.
 
 - Communicatie tussen processen
@@ -47,14 +52,17 @@ Verschillende manieren om te willen communiceren.
 - Communicatie over netwerken
 
 **Challenge: Marshalling**
+
 Marshalling: het in een andere volgorde lezen van bits
 
 ## Windows Communication Framework (WCF)
 
 ### Basics
+
 Het belangrijkste aan WCF is het ABC, namelijk: *Address*, *Binding* en *Contract*.
 
 **Address**
+
 Waar kan ik de betreffende service vinden? Bijvoorbeeld:
 
 - internet: ``http://google.com:8001/SuperSecretService``
@@ -62,6 +70,7 @@ Waar kan ik de betreffende service vinden? Bijvoorbeeld:
 - localhost: `net.pipe://localhost/MyPipe`
 
 **Binding**
+
 Hoe gaan wij berichten delen?
 
 - Text of binary
@@ -70,6 +79,7 @@ Hoe gaan wij berichten delen?
 - 1-to-1 of broadcasten
 
 **Contract**
+
 Wat kan ik allemaal gebruiken/doen? Bijvoorbeeld:
 
 ```cs
@@ -114,6 +124,7 @@ Het is ook belangrijk om te weten hoe je services kunt tekenen. Let hier op de i
 ![voorbeeld](https://github.com/JortPolderdijk/FHICT-samenvattingen/blob/master/t-sem4/assets/CSA/Picture1.png)
 
 **XML**
+
 In WCF is XML een veelgebruikte data format. Het lijkt heel erg op HTML. 
 
 ```xml
@@ -125,6 +136,7 @@ Attributes: `title=“Fairytales” author=“Grimm”` en `title=“Introductio
 Elements: `<book></book>` en `<chapter></chapter>`
 
 **Configuratie**
+
 Je kunt op twee manieren configureren. In je code of in de `app.config` file.
 In de code:
 
@@ -149,6 +161,7 @@ Er zijn verschillende manieren waarop jouw services te hosten zijn. Een aantal v
 - dedicated hosting engine (bijvoorbeeld een IIS7 server)
 
 ### Instance management
+
 Je hebt drie soorten instances, namelijk: `PerCall`, `PerSession` en `Singleton`. Instance management geeft aan wat de server moet doen het geheugen voor een bepaalde service. Het instellen van een `InstanceContextMode` gaat als volgt:
 
 ```cs
@@ -179,6 +192,7 @@ Je hebt drie soorten instances, namelijk: `PerCall`, `PerSession` en `Singleton`
 - Vaak gebruikt bij unieke objecten zoals een aan te sturen motor.
 
 ###Operations
+
 Er zijn verschillende types van operations binnen WCF, namelijk: `Request - Reply` (standaard), `One-way`, `Callbacks` en `Events`.
 
 **Request - Reply**
@@ -314,6 +328,7 @@ interface IBankEvents
 ```
 
 ##Oefentoets #1
+
 1. Een voetbal toernooi heeft een WCF service zodat client applicaties aan het eind van de dag de nieuwe wedstrijduitslagen kunnen ontvangen. De uitslagen wordt weergegeven door een lijst van de klasse “Result”. De klasse “Result” heeft properties met de naam van de thuisclub, de naam van de uitclub, de score van de thuisclub en de score van de uitclub. De service maakt gebruik van het event “void NewResults(List<Result> results)” om een client op de hoogte te stellen van een nieuwe uitslagen. Definieer een contract voor deze service. **(3 punten)**
 2. Het endpoint voor deze service wordt geconfigureerd in de .config file. Geef aan hoe dit endpoint er uitziet. Hint: `<endpoint ......... />` **(1 punt)**
 3. Een andere manier om een endpoint te definiëren is in de code. Geeft het stukje code dat dit zelfde endpoint definieert. Maak hierbij gebruik van self-hosting. **(1 punt)**
@@ -331,6 +346,7 @@ interface IBankEvents
  * Het verkeerde endpoint contract type wordt gebruikt.
 
 **Score**
+
 Punt = 1 + 0.45 * (aantal gescoorde punten)
 
 [https://portal.fhict.nl/Studentenplein/LMC/1617vj/Technology/semester4/ds4-csa/Toets/OefenTentamen.pdf](https://portal.fhict.nl/Studentenplein/LMC/1617vj/Technology/semester4/ds4-csa/Toets/OefenTentamen.pdf)
