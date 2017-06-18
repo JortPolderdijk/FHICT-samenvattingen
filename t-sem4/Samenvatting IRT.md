@@ -100,7 +100,7 @@ Regeltechnieken kom je overal tegen, denk aan HVAC, huishoudelijke apparaten, vo
 
 Je hebt twee soorten systemen. Bij een open-loop systeem heb je niet te maken met *feedback*. Zie onderstaande afbeelding ter referentie.
 
-<img src="http://engineering.electrical-equipment.org/wp-content/uploads/2014/03/Difference-between-Open-Loop-Closed-Loop-Systems-5.jpg" alt="" />
+![loop](http://engineering.electrical-equipment.org/wp-content/uploads/2014/03/Difference-between-Open-Loop-Closed-Loop-Systems-5.jpg)
 
 **Statisch en dynamisch gedrag**
 
@@ -122,7 +122,7 @@ Een transfer functie is een functie die beschrijft wat een input (X) doet met ee
 Een belangrijke formule om te onthouden is:
 <img src="https://latex.codecogs.com/png.latex?H_t&space;=&space;\frac{Y}{X}&space;=&space;\frac{H_{straight}}{1&space;&plus;&space;H_{feedbackloop}}&space;=&space;\frac{H_1}{1&space;&plus;&space;H_1&space;*&space;H_2}" title="H_t = \frac{Y}{X} = \frac{H_{straight}}{1 + H_{feedbackloop}} = \frac{H_1}{1 + H_1 * H_2}" />
 
-<img src="https://latex.codecogs.com/png.latex?H_{feedbackloop}&space;=&space;H_1&space;*&space;H_2" title="H_{feedbackloop} = H_1 * H_2" /> (want je doet de feedback keer de transfer functie van ke input).
+<img src="https://latex.codecogs.com/png.latex?H_{feedbackloop}&space;=&space;H_1&space;*&space;H_2" title="H_{feedbackloop} = H_1 * H_2" /> (want je doet de feedback keer de transfer functie van de input).
 
 Hierbij is het belangrijk om te weten dat `H_straight` de transferfunctie is van het systeem zonder de feedback loop. `H_feedbackloop` is de feedback transferfunctie van het systeem. `H_t` is de totale transferfunctie (ofwel de vervangende transfer functie, ook wel *reduction*).
 
