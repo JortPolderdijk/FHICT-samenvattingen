@@ -104,7 +104,7 @@ Je hebt twee soorten systemen. Bij een open-loop systeem heb je niet te maken me
 
 **Statisch en dynamisch gedrag**
 
-Statisch gedrag wil zeggen dat de uitgang niet veranderd over de tijd. Je zou het kunnen zien als een `static` in c++. Deze veranderd namelijk ook niet.
+Statisch gedrag wil zeggen dat de uitgang niet veranderd over de tijd. Je zou het kunnen zien als een `const` in c++. Deze veranderd namelijk ook niet.
 
 Dynamisch gedrag veranderd wel naarmate er meer tijd verstrijkt (zie afbeelding hieronder). Het gedrag kunnen we benaderen met een *transfer functie* en deze heeft bepaalde *karakteristieken*.
 
