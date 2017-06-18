@@ -137,11 +137,16 @@ Heel verassend dat de transferfunctie dan gewoon `H_1` blijkt te zijn.
 
 **Twee transferfuncties 😨**
 
-Als we twee transferfuncties (bijvoorbeeld `H_1` en `H_2`) hebben, kunnen we deze gewoon bij elkaar optellen:
+Als we twee transferfuncties (bijvoorbeeld `H_1` en `H_2`) hebben en deze staan parallel, dan kunnen we deze gewoon bij elkaar optellen:
 
 ![summation](https://github.com/JortPolderdijk/FHICT-samenvattingen/raw/master/t-sem4/assets/IRT/3.png)
 
 <img src="https://latex.codecogs.com/png.latex?H_t&space;=&space;H_1&space;&plus;&space;H_2" title="H_t = H_1 + H_2" />
+
+Als je twee transferfuncties hebt die achter elkaar (serieel) staan, dan moeten we de functies met elkaar vermenigvuldigen.
+
+<img src="https://latex.codecogs.com/png.latex?H_t&space;=&space;H_1&space;*&space;H_2" title="H_t = H_1 * H_2" />
+
 
 **Een opamp 🎸**
 
