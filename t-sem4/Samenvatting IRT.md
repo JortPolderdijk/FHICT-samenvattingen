@@ -338,3 +338,31 @@ De algemene vorm van een transfer functie is: <img src="https://latex.codecogs.c
 		</tr>
 	</tbody>
 </table>
+
+## PID regelaar
+
+PID staat voor proportioneel, integratie en diffrentiatie en is één van de meest voorkomende regelaar binnen de procesregeling. 
+
+**Het is binnen een PID regelaar heel belangrijk om overal dezelfde eenheid te gebruiken. Als je een motor regelt met voltage, dan moet de feedback ook de eenheid volts hebben. Dit kan door gebruik te maken van een sensor (bijvoorbeeld encoder).**
+
+![PID](https://github.com/JortPolderdijk/FHICT-samenvattingen/raw/master/t-sem4/assets/IRT/6.png)
+
+### Proportional controller
+
+* De P-controller versterkt het error signaal
+* De error (<img src="https://latex.codecogs.com/png.latex?e(t)" title="e(t)" />) is het verschil tussen de setpoint (de input, <img src="https://latex.codecogs.com/png.latex?x(t)" title="x(t)" />) en de feedback van het systeem (je output, <img src="https://latex.codecogs.com/png.latex?y(t)" title="y(t)" />)
+
+### Integration controller
+
+* De I-controller maakt gebruik van de [geintergreerde](https://www.youtube.com/watch?v=TlJNZvRWGQM) error. Dat wil zeggen dat hij de hoeveelheid error over de tijd leest.
+* De controller kijkt naar de offset van de vorige reading en doet deze keer <img src="https://latex.codecogs.com/png.latex?\inline&space;K_i" title="K_i" />.
+* Een I-controller kan resulteren in een *overshoot*, aangezien de waarde over het setpoint heen kan gaan (zie zwarte lijn op onderstaande afbeelding)
+
+![](https://upload.wikimedia.org/wikipedia/commons/c/c0/Change_with_Ki.png)
+
+### Derivative controller
+
+* De D-controller maakt gebruik van de [gediffrentieerde](https://www.youtube.com/watch?v=QYpwF9L08iM) error. Dat wil zeggen dat hij naar de helling van de error kijkt over de tijd.
+* Hij doet dus de <img src="https://latex.codecogs.com/png.latex?\inline&space;\frac{de(t))}{dt}" title="\frac{de(t))}{dt}" /> keer <img src="https://latex.codecogs.com/png.latex?\inline&space;K_d" title="K_d" /> en dat is wat uit deze controller komt.
+
+![](https://upload.wikimedia.org/wikipedia/commons/c/c7/Change_with_Kd.png)
