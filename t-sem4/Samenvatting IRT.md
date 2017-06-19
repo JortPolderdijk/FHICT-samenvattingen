@@ -162,7 +162,7 @@ Om de transferfunctie te kunnen berekenen, zetten we dit om naar een feedback co
 
 <img src="https://latex.codecogs.com/png.latex?H_1&space;=&space;A_o" title="H_1 = A_o" />
 
-<img src="https://latex.codecogs.com/png.latex?H_{2}&space;=&space;\frac{R_1}{R_2&space;&plus;&space;R_1}&space;*&space;\frac{R_1}{R_1}&space;=&space;\frac{1}{R_2&space;&plus;&space;1}" title="H_{feedbackloop} = \frac{R_1}{R_2 + R_1} * \frac{R_1}{R_1} = \frac{1}{R_2 + 1}" />
+<img src="https://latex.codecogs.com/png.latex?H_{2}&space;=&space;\frac{R_1}{R_2&space;&plus;&space;R_1}&space;*&space;\frac{\frac{1}{R_1}}{\frac{1}{R_1}}&space;=&space;\frac{1}{R_2&space;&plus;&space;1}" title="H_{feedbackloop} = \frac{R_1}{R_2 + R_1} * \frac{R_1}{R_1} = \frac{1}{R_2 + 1}" />
 
 <img src="https://latex.codecogs.com/png.latex?H_t&space;=&space;\frac{Y}{X}&space;=&space;\frac{H_{straight}}{1&space;&plus;&space;H_{feedbackloop}}&space;=&space;\frac{H_1}{1&space;&plus;&space;H_1&space;*&space;H_2}&space;=&space;\frac{A_o}{1&space;&plus;&space;A_o&space;*&space;\frac{1}{R_2&space;&plus;&space;1}}&space;=&space;\frac{A_o}{1&space;&plus;&space;\frac{A_o}{R_2&space;&plus;&space;1}}&space;*&space;\frac{R_2&space;&plus;&space;1}{R_2&space;&plus;&space;1}&space;=&space;\frac{A_o&space;*&space;(R_2&space;&plus;&space;1)}{(R_2&space;&plus;&space;1)&space;&plus;&space;A_o}" title="H_t = \frac{Y}{X} = \frac{H_{straight}}{1 + H_{feedbackloop}} = \frac{H_1}{1 + H_1 * H_2} = \frac{A_o}{1 + A_o * \frac{1}{R_2 + 1}} = \frac{A_o}{1 + \frac{A_o}{R_2 + 1}} * \frac{R_2 + 1}{R_2 + 1} = \frac{A_o * (R_2 + 1)}{(R_2 + 1) + A_o}" />
 
