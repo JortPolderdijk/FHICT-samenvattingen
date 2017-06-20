@@ -121,7 +121,7 @@ public class BankClients // De clienten worden gedeeld via de service.
 **Tekenen**
 
 Het is ook belangrijk om te weten hoe je services kunt tekenen. Let hier op de interfaces. Een voorbeeldje:
-![voorbeeld](https://github.com/JortPolderdijk/FHICT-samenvattingen/blob/master/t-sem4/assets/CSA/Picture1.png)
+![voorbeeld](https://github.com/JortPolderdijk/FHICT-samenvattingen/raw/master/t-sem4/assets/CSA/Picture1.png)
 
 **XML**
 
@@ -162,7 +162,7 @@ Er zijn verschillende manieren waarop jouw services te hosten zijn. Een aantal v
 
 ### Instance management
 
-Je hebt drie soorten instances, namelijk: `PerCall`, `PerSession` en `Singleton`. Instance management geeft aan wat de server moet doen het geheugen voor een bepaalde service. Het instellen van een `InstanceContextMode` gaat als volgt:
+Je hebt drie soorten instances, namelijk: `PerCall`, `PerSession` en `Singleton`. Instance management geeft aan wat de server moet doen met het geheugen voor een bepaalde service. Het instellen van een `InstanceContextMode` gaat als volgt:
 
 ```cs
 [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]public class CService : IService{	. . . . .}
@@ -246,11 +246,11 @@ this.callback.OnCallback();
 
 **Events**
 
-Events zijn eigenlijk gewoon events en worden gebruikt als signaaltje om aan te geven dat er iets gebeurt is.
+Events zijn eigenlijk gewoon callbacks en worden gebruikt als signaaltje om aan te geven dat er iets gebeurt is.
 
 Bij events heb je te maken met het subscriben en eventueel unsubscriben.
 
-![flowchart](https://github.com/JortPolderdijk/FHICT-samenvattingen/blob/master/t-sem4/assets/CSA/Picture2.png)
+![flowchart](https://github.com/JortPolderdijk/FHICT-samenvattingen/raw/master/t-sem4/assets/CSA/Picture2.png)
 
 `Server side`
 
